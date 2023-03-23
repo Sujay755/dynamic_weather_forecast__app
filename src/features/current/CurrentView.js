@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect} from "react";
 import Base from "../../components/Base";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun,faMoon } from "@fortawesome/free-regular-svg-icons";
@@ -17,7 +17,7 @@ const celcius = useSelector((state)=>state.celcius.celcius)
 
 const time = current.location.localtime? current.location.localtime.substring(11,16) : ''
 
-const [city,setCity] = useState("new delhi")
+const city = "new delhi"
 
 const allFn = [
   fetchCurrentWeather({city}),

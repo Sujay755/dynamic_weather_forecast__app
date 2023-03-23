@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleUp, faDroplet, faSun, faWind, faMoon, faCloudSun } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp, faDroplet, faSun, faWind, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from "react-redux";
 
 const Days = ({day}) => {
@@ -37,7 +37,7 @@ const Days = ({day}) => {
           <div className="flex flex-col md:flex-row justify-center md:justify-between">
             <div className="flex flex-col">
               <div className="flex flex-row justify-center">
-                <img className="text-4xl md:text-5xl py-4" src={`https:${day.day.condition.icon}`}/>
+                <img className="text-4xl md:text-5xl py-4" src={`https:${day.day.condition.icon}`} alt="nothing"/>
                 <h1 className="text-4xl md:text-5xl px-2 py-5">
                   {celcius? parseInt(day.day.maxtemp_f) : parseInt(day.day.maxtemp_c)}<span>&#176;</span><span className="text-xl font-medium"> Hi </span>/ {celcius? parseInt(day.day.mintemp_f) : parseInt(day.day.mintemp_c)}<span>&#176;</span> <span className="text-xl font-medium">Low</span>
                 </h1>
