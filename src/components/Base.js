@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import Switch from "react-switch";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,10 +10,19 @@ import { fetchHoursWeather } from "../features/hour/hoursSlice";
 import { fetchDaysWeather } from "../features/day/daysSlice";
 import { fetchDayWeather } from "../features/day/daySlice";
 import { changeC } from "../features/celcius/celciusSlice";
+import {changeCity} from "../features/city/citySlice"
 
 const Base = ({ children }) => {
-  const [city,setCity] = useState('gohpur');
+  const city = useSelector((state)=>state.city.city)
   const dispatch = useDispatch();
+
+  const handleDispatch = useCallback(
+    (e)=>{
+      const {value} = e.target;
+      dispatch(changeCity(value));
+    },
+    [dispatch]
+  )
 
   const allFn = [
     fetchCurrentWeather({city}),
@@ -26,9 +35,9 @@ const fetchAllData = ()=>{
     allFn.map((fn)=>dispatch(fn))
 }
 
-// useEffect(()=>{
-//     fetchAllData()
-// },[])
+useEffect(()=>{
+    fetchAllData()
+},[])
 
   const celcius = useSelector((state)=>state.celcius.celcius)
 
@@ -62,7 +71,7 @@ const fetchAllData = ()=>{
             className="rounded-3xl text-center font-base text-gray-500 p-1 mr-1"
             type="text"
             placeholder="Search city"
-            onChange={e=>setCity(e.target.value)}
+            onChange={handleDispatch}
           />
           <button onClick={fetchAllData}><FontAwesomeIcon className="text-slate-50 font-bold" icon={faSearch}/></button>
         </div>

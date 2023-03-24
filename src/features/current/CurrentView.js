@@ -1,38 +1,17 @@
-import React,{useEffect} from "react";
+import React from "react";
 import Base from "../../components/Base";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun,faMoon } from "@fortawesome/free-regular-svg-icons";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCurrentWeather } from "./currentSlice";
-import { fetchHoursWeather } from "../hour/hoursSlice";
-import { fetchDayWeather } from "../day/daySlice";
-import { fetchDaysWeather } from "../day/daysSlice";
+import {  useSelector } from "react-redux";
 
 const CurrentView = () => {
   
-const dispatch = useDispatch();
 const current = useSelector((state)=>state.current)
 const day = useSelector((state)=>state.day)
 const celcius = useSelector((state)=>state.celcius.celcius)
 
 const time = current.location.localtime? current.location.localtime.substring(11,16) : ''
 
-const city = "new delhi"
-
-const allFn = [
-  fetchCurrentWeather({city}),
-  fetchHoursWeather({city}),
-  fetchDaysWeather({city}),
-  fetchDayWeather({city})
-]
-
-const fetchAllData = ()=>{
-  allFn.map((fn)=>dispatch(fn))
-}
-
-useEffect(()=>{
-  fetchAllData()
-},[])
 
   return (
     <Base>

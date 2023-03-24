@@ -8,7 +8,7 @@ export const fetchDayWeather = createAsyncThunk('day/fetchDayWeather',async({cit
         url: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
         params: {q: `${city}`, days: '3'},
         headers: {
-          'X-RapidAPI-Key': 'b6c09cea84msh64f6c2377982826p1868ffjsn205d5f528179',
+          'X-RapidAPI-Key': `${process.env.REACT_APP_API_KEY}`,
           'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
       };
