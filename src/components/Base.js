@@ -49,7 +49,7 @@ useEffect(()=>{
     <div>
       <div className="bg-blue-400">
       <div className="flex mx-2 md:mx-auto justify-between md:w-4/5">
-        <div className="text-blue-500 xsm:text-smx2 md:text-sm font-bold text-left bg-slate-50 my-3 p-2">
+        <div className="text-blue-500 text-smx2 md:text-sm font-bold text-left bg-slate-50 my-3 p-2">
           <h6>
             The
             <br />
@@ -63,7 +63,7 @@ useEffect(()=>{
             An <span className="font-semibold">SSPL</span> Business
           </h4>
         </div>
-        <div className="text-center bg-red-600 text-smx md:text-lg font-bold text-slate-50 my-auto px-2 py-1">
+        <div className="text-center bg-red-600 text-smx2 xsm:text-smx md:text-lg font-bold text-slate-50 my-auto px-2 py-1">
           <h4>THE WEATHER TIMES</h4>
         </div>
         <div className="flex flex-row text-smx md:text-sm my-auto items-center">
