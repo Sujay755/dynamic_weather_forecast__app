@@ -5,8 +5,8 @@ import axios from "axios";
 export const fetchHoursWeather = createAsyncThunk('hour/fetchHoursWeather',async({city})=>{
     const options = {
         method: 'GET',
-        url: 'http://api.weatherapi.com/v1/forecast.json',
-        params: {key: `8164f08d4cde44e88d9153510230304`, q: `${city}`, days: '3'}
+        url: 'https://api.weatherapi.com/v1/forecast.json',
+        params: {key: `${process.env.REACT_APP_API_KEY}`, q: `${city}`, days: '3'}
       };
     return await axios.request(options)
            .then(response=>response.data.forecast.forecastday[0].hour.map(item=>item))
