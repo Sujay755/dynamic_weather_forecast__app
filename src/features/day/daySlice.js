@@ -5,12 +5,8 @@ import axios from "axios";
 export const fetchDayWeather = createAsyncThunk('day/fetchDayWeather',async({city})=>{
     const options = {
         method: 'GET',
-        url: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
-        params: {q: `${city}`, days: '3'},
-        headers: {
-          'X-RapidAPI-Key': `${process.env.REACT_APP_API_KEY}`,
-          'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-        }
+        url: 'http://api.weatherapi.com/v1/forecast.json',
+        params: {key: `${process.env.REACT_APP_API_KEY}`, q: `${city}`, days: '3'}
       };
     return await axios.request(options)
            .then(response=>response.data.forecast.forecastday[0].astro)

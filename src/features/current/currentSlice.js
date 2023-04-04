@@ -5,13 +5,10 @@ import axios from "axios";
 export const fetchCurrentWeather = createAsyncThunk('current/fetchCurrentWeather',async({city})=>{
     const options = {
         method: 'GET',
-        url: 'https://weatherapi-com.p.rapidapi.com/current.json',
-        params: {q: `${city}`},
-        headers: {
-          'X-RapidAPI-Key': `${process.env.REACT_APP_API_KEY}`,
-          'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-        }
-      };
+        url: 'http://api.weatherapi.com/v1/current.json',
+        params: {key: `${process.env.REACT_APP_API_KEY}`,
+                 q: `${city}`}
+                };
     return await axios.request(options)
            .then(response=>response.data)
 })
