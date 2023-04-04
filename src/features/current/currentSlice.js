@@ -6,7 +6,7 @@ export const fetchCurrentWeather = createAsyncThunk('current/fetchCurrentWeather
     const options = {
         method: 'GET',
         url: 'http://api.weatherapi.com/v1/current.json',
-        params: {key: `${process.env.REACT_APP_API_KEY}`,
+        params: {key: `8164f08d4cde44e88d9153510230304`,
                  q: `${city}`}
                 };
     return await axios.request(options)
