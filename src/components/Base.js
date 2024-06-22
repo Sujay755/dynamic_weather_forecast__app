@@ -68,12 +68,12 @@ useEffect(()=>{
         </div>
         <div className="flex flex-row text-smx md:text-sm my-auto items-center">
           <input
-            className="rounded-3xl text-center font-base text-gray-500 p-1 mr-1"
+            className="rounded-3xl h-6 w-24 sm:h-auto sm:w-auto text-center text-sm font-medium text-gray-500 p-1 mr-1"
             type="text"
             placeholder="Search city"
             onChange={handleDispatch}
           />
-          <button onClick={fetchAllData}><FontAwesomeIcon className="text-slate-50 font-bold" icon={faSearch}/></button>
+          <button onClick={fetchAllData}><FontAwesomeIcon className="text-slate-50 text-base ml-2 font-bold" icon={faSearch}/></button>
         </div>
         <div className="flex flex-row text-slate-50 font-bold text-smx md:text-sm my-auto">
           <h6 className="mr-1 md:-my-1">
