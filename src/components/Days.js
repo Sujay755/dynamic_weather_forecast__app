@@ -81,7 +81,9 @@ const Days = ({day}) => {
                     <h5 className="text-xl">{day.day.avgvis_km} km</h5>
                 </div>
             </div>
+
           </div>
+
             </div>
             <div className={"w-full bg-slate-100 p-4 md:rounded-md md:p-7 md:pb-10 mx-auto mb-10" + (open? " flex" : " hidden")}>
           <div className="flex flex-col md:flex-row w-full justify-between">

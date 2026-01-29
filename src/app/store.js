@@ -5,6 +5,7 @@ import hoursReducer from '../features/hour/hoursSlice'
 import dayReducer from '../features/day/daySlice'
 import celciusReducer from '../features/celcius/celciusSlice'
 import cityReducer from '../features/city/citySlice'
+import searchReducer from '../features/search/searchSlice'
 
 const store = configureStore({
     reducer:{
@@ -13,7 +14,8 @@ const store = configureStore({
         days : daysReducer,
         hour: hoursReducer,
         celcius: celciusReducer,
-        city: cityReducer
+        city: cityReducer,
+        search: searchReducer
     },
     middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

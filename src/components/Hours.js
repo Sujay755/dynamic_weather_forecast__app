@@ -85,6 +85,7 @@ const Hours = ({hour}) => {
                         </div>
                         <h4><span className='font-bold text-base'>{hour.vis_km} </span>km</h4>
                     </div>
+
                 </div>
                 <hr className='mt-5 mb-2'/>
             </div>
